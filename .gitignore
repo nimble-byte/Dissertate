@@ -1,0 +1,14 @@
+.logged
+*.pdf
+!figures/*.pdf
+
+# helper files
+*.aux
+*.bbl
+*.blg
+*.bcf
+*.lof
+*.log
+*.out
+*.toc
+*.run.xml

@@ -1,0 +1,83 @@
+{
+  "files.exclude": {
+    "**/**/*.aux": true,
+    "**/**/*.bbl": true,
+    "**/**/*.bcf": true,
+    "**/**/*.blg": true,
+    "**/**/*.log": true,
+    "**/**/*.lof": true,
+    "**/**/*.out": true,
+    "**/**/*.run.xml": true,
+    "**/**/*.toc": true,
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/CVS": true,
+    "**/.DS_Store": true
+  },
+  "latex-workshop.latex.recipes": [
+    {
+      "name": "xelatex -> biber -> xelatex*2",
+      "tools": [
+        "xelatex",
+        "biber",
+        "xelatex",
+        "xelatex"
+      ]
+    }
+  ],
+  "latex-workshop.latex.tools": [
+    {
+      "name": "latexmk",
+      "command": "latexmk",
+      "args": [
+        "-synctex=1",
+        "-interaction=nonstopmode",
+        "-file-line-error",
+        "-pdf",
+        "%DOC%"
+      ]
+    },
+    {
+      "name": "xelatex",
+      "command": "xelatex",
+      "args": [
+        "-interaction=batchmode",
+        "-halt-on-error",
+        "%DOC%"
+      ]
+    },
+    {
+      "name": "biber",
+      "command": "biber",
+      "args": [
+        "%DOCFILE%"
+      ]
+    }
+  ],
+  "latex-workshop.latex.autoBuild.onSave.enabled": false,
+  "latex-workshop.latex.clean.enabled": false,
+  "latex-workshop.latex.clean.fileTypes": [
+    "**/**/*.aux",
+    "*.bbl",
+    "*.bcf",
+    "*.blg",
+    "*.idx",
+    "*.ind",
+    "*.lof",
+    "*.lot",
+    "*.out",
+    "*.toc",
+    "*.acn",
+    "*.acr",
+    "*.alg",
+    "*.glg",
+    "*.glo",
+    "*.gls",
+    "*.ist",
+    "*.fls",
+    "*.lof",
+    "*.log",
+    "*.fdb_latexmk"
+  ],
+}

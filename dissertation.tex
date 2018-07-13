@@ -1,0 +1,27 @@
+%!TEX TS-program = xelatex
+%!TEX encoding = UTF-8 Unicode
+
+\documentclass{Dissertate}
+\addbibresource{references.bib}
+
+\begin{document}
+
+% the front matter
+% \input{frontmatter/personalize}
+
+\frontmatter
+\setstretch{\dnormalspacing}
+
+% \doublespacing
+
+% include each chapter...
+\include{chapters/chapter1}
+\include{chapters/chapter2}
+\include{chapters/chapter3}
+
+\setstretch{\dnormalspacing}
+
+% the back matter
+\backmatter
+
+\end{document}

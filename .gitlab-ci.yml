@@ -1,0 +1,22 @@
+image: blang/latex:ctanfull
+
+stages:
+  - build
+
+compile:
+  stage: build
+  except:
+    - master
+  before_script:
+    - find ./fonts -type d -exec chmod 0755 {} +
+    - find ./fonts -type f -exec chmod 0644 {} +
+    - cp -r ./fonts/* /usr/share/fonts
+  script:
+    - xelatex -interaction=nonstopmode -halt-on-error dissertation
+    - biber dissertation
+    - xelatex -interaction=nonstopmode -halt-on-error dissertation
+    - xelatex -interaction=nonstopmode -halt-on-error dissertation
+  artifacts:
+    paths:
+      - ./dissertation.pdf
+    expire_in: 1 day
